@@ -37,6 +37,7 @@ end
 
 def self.new_from_filename(file_name)
   new_song = self.new
+  binding.pry
   new_song.name = file_name.split(" - ")[1].split(".")[0]
   new_song.artist_name = file_name.split(" - ")[0]
   new_song
@@ -49,18 +50,6 @@ def self.create_from_filename(file_name)
   new_song.artist_name = file_name.split(" - ")[0]
   @@all << new_song
 end
-
-  # it 'initializes and saves a song and artist_name based on the filename format' do
-  #   song = Song.create_from_filename("Thundercat - For Love I Come.mp3")
-  #   song_match = Song.find_by_name("For Love I Come")
-  #   expect(song_match.name).to eq("For Love I Come")
-  #   expect(song_match.artist_name).to eq("Thundercat")
-
-
-
-
-
-
 
   def self.destroy_all  # Passed
     @@all.clear
